@@ -1,6 +1,6 @@
 {
   "name": "parse-conflict-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse a JSON string that has git merge conflicts, resolving if possible",
   "author": "Isaac Z. Schlueter <i@izs.me> (https://izs.me)",
   "license": "ISC",
