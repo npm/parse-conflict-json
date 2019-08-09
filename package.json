@@ -21,5 +21,12 @@
     "json-parse-better-errors": "^1.0.2",
     "just-diff": "^3.0.1",
     "just-diff-apply": "^3.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/parse-conflict-json.git"
+  },
+  "files": [
+    "index.js"
+  ]
 }
