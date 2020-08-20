@@ -15,4 +15,4 @@ t.matchSnapshot(parseJSON('\uFEFF' + read(conflicted)), 'BOM is no problem')
 
 
 const broken = __dirname + '/fixtures/broken.json'
-t.throws(() => parseJSON(read(broken)), SyntaxError)
+t.throws(() => parseJSON(read(broken)), { name: 'JSONParseError' })

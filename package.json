@@ -18,9 +18,9 @@
     "tap": "^14.6.1"
   },
   "dependencies": {
-    "json-parse-better-errors": "^1.0.2",
     "just-diff": "^3.0.1",
-    "just-diff-apply": "^3.0.0"
+    "just-diff-apply": "^3.0.0",
+    "json-parse-even-better-errors": "^2.3.0"
   },
   "repository": {
     "type": "git",
