@@ -13,6 +13,8 @@ t.matchSnapshot(parseJSON(read(conflicted), null, 'theirs'), 'prefer theirs')
 t.throws(() => parseJSON('', null, 'asdf'))
 t.matchSnapshot(parseJSON('\uFEFF' + read(conflicted)), 'BOM is no problem')
 
+const both = __dirname + '/fixtures/both.json'
+t.matchSnapshot(parseJSON(read(both), null, 'both'), 'parse both.json both')
 
 const broken = __dirname + '/fixtures/broken.json'
 t.throws(() => parseJSON(read(broken)), { name: 'JSONParseError' })

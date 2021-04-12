@@ -1,6 +1,7 @@
 const parseJSON = require('json-parse-even-better-errors')
 const { diff } = require('just-diff')
 const { diffApply } = require('just-diff-apply')
+const jsonFixer = require('json-fixer');
 
 const stripBOM = content => {
   content = content.toString()
@@ -12,6 +13,19 @@ const stripBOM = content => {
   return content
 }
 
+const removeGitMergeConflictMarkers = str => str.split(/[\n\r]+/g).reduce((acc, line) => {
+  if (!line.match(PARENT_RE) && !line.match(OURS_RE) && !line.match(THEIRS_RE) && !line.match(END_RE))
+    if (!line.includes("{") && !line.includes("}"))  {
+      acc.both += line.replace(/(^,)|(,$)/g, "") + ",\n"
+    } else {
+      acc.both += line + '\n'
+    }
+
+  return acc
+}, {
+  both: '',
+})
+
 const PARENT_RE = /\|{7,}/g
 const OURS_RE = /<{7,}/g
 const THEIRS_RE = /={7,}/g
@@ -22,13 +36,20 @@ const isDiff = str =>
 
 const parseConflictJSON = (str, reviver, prefer) => {
   prefer = prefer || 'ours'
-  if (prefer !== 'theirs' && prefer !== 'ours')
-    throw new TypeError('prefer param must be "ours" or "theirs" if set')
-
+  if (prefer !== 'theirs' && prefer !== 'ours' && prefer !== 'both')
+    throw new TypeError('prefer param must be "ours", "theirs", or "both" if set')
+  
   str = stripBOM(str)
 
-  if (!isDiff(str))
+  if (!isDiff(str)) {
     return parseJSON(str)
+  }
+
+  if (prefer === 'both') {
+    const output = removeGitMergeConflictMarkers(str)
+    const {data} = jsonFixer(output.both)
+    return data;
+  }
 
   const pieces = str.split(/[\n\r]+/g).reduce((acc, line) => {
     if (line.match(PARENT_RE))
