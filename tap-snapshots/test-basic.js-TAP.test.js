@@ -29,6 +29,16 @@ Object {
 }
 `
 
+exports[`test/basic.js TAP > parse both.json both 1`] = `
+Object {
+  "a": "a",
+  "b": "b",
+  "c": "c",
+  "d": "d",
+  "foo": "bar",
+}
+`
+
 exports[`test/basic.js TAP > parse conflicted 1`] = `
 Object {
   "a": Object {
