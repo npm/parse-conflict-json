@@ -21,10 +21,10 @@
     "check-coverage": true
   },
   "devDependencies": {
+    "@npmcli/template-oss": "^2.3.1",
     "tap": "^15.1.5"
   },
   "dependencies": {
-    "@npmcli/template-oss": "^2.3.1",
     "json-parse-even-better-errors": "^2.3.1",
     "just-diff": "^5.0.1",
     "just-diff-apply": "^4.0.1"
