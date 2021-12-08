@@ -1,0 +1,13 @@
+{
+  "constructor": "constructor",
+  "toString": "toString",
+  "__proto__": "__proto__",
+  "x": {
+<<<<<<<
+    "__proto__": {
+      "foo": "__proto__.foo"
+    }
+=======
+>>>>>>>
+  }
+}

@@ -1,18 +1,32 @@
 const parseJSON = require('../')
 const t = require('tap')
 const { readFileSync } = require('fs')
-const read = f => readFileSync(f, 'utf8')
 const path = require('path')
+const conflicted = readFileSync((path.join(__dirname, '/fixtures/conflicted.json')), 'utf8')
+const broken = readFileSync(path.join(__dirname, '/fixtures/broken.json'), 'utf8')
+const proto = readFileSync(path.join(__dirname, '/fixtures/prototype.json'), 'utf8')
 
-t.matchSnapshot(parseJSON(JSON.stringify({ a: 'apple' })), 'parse unconflicted')
-const conflicted = path.join(__dirname, '/fixtures/conflicted.json')
-t.matchSnapshot(parseJSON(read(conflicted)), 'parse conflicted')
-t.ok(parseJSON.isDiff(read(conflicted)), 'conflicted is a diff conflict')
-t.notOk(parseJSON.isDiff(JSON.stringify({})), '{} is not a diff conflict')
-t.notOk(parseJSON.isDiff(JSON.stringify({ a: 1 })), '{a:1} is not a diff conflict')
-t.matchSnapshot(parseJSON(read(conflicted), null, 'theirs'), 'prefer theirs')
-t.throws(() => parseJSON('', null, 'asdf'))
-t.matchSnapshot(parseJSON('\uFEFF' + read(conflicted)), 'BOM is no problem')
+t.test('basic usage', async t => {
+  t.matchSnapshot(parseJSON(JSON.stringify({ a: 'apple' })), 'parse unconflicted')
+})
 
-const broken = path.join(__dirname, '/fixtures/broken.json')
-t.throws(() => parseJSON(read(broken)), { name: 'JSONParseError' })
+t.test('conflicted', async t => {
+  t.matchSnapshot(parseJSON(conflicted), 'parse conflicted, preferring theirs')
+  t.matchSnapshot(parseJSON(conflicted, null, 'theirs'), 'prefer theirs')
+})
+
+t.test('isDiff', async t => {
+  t.notOk(parseJSON.isDiff(JSON.stringify({})), '{} is not a diff conflict')
+  t.notOk(parseJSON.isDiff(JSON.stringify({ a: 1 })), '{a:1} is not a diff conflict')
+  t.ok(parseJSON.isDiff(conflicted), 'conflicted is a diff conflict')
+})
+
+t.test('error states', async t => {
+  t.throws(() => parseJSON('', null, 'asdf'))
+  t.matchSnapshot(parseJSON('\uFEFF' + conflicted), 'BOM is no problem')
+  t.throws(() => parseJSON(broken), { name: 'JSONParseError' })
+})
+
+t.test('global object attributes', async t => {
+  t.matchSnapshot(parseJSON(proto), 'filters out global object attributes')
+})

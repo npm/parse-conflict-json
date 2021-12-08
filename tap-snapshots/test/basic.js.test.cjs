@@ -5,61 +5,37 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/basic.js TAP > BOM is no problem 1`] = `
-Object {
-  "a": Object {
-    "b": Object {
-      "c": Object {
-        "x": "bbbb",
-      },
-    },
-  },
-  "array": Array [
-    100,
-    Object {
-      "foo": "baz",
-    },
-    1,
-    3,
-    Object {
-      "foo": "bar",
-    },
-    1,
-  ],
-}
-`
-
-exports[`test/basic.js TAP > parse conflicted 1`] = `
-Object {
-  "a": Object {
-    "b": Object {
-      "c": Object {
-        "x": "bbbb",
-      },
-    },
-  },
-  "array": Array [
-    100,
-    Object {
-      "foo": "baz",
-    },
-    1,
-    3,
-    Object {
-      "foo": "bar",
-    },
-    1,
-  ],
-}
-`
-
-exports[`test/basic.js TAP > parse unconflicted 1`] = `
+exports[`test/basic.js TAP basic usage > parse unconflicted 1`] = `
 Object {
   "a": "apple",
 }
 `
 
-exports[`test/basic.js TAP > prefer theirs 1`] = `
+exports[`test/basic.js TAP conflicted > parse conflicted, preferring theirs 1`] = `
+Object {
+  "a": Object {
+    "b": Object {
+      "c": Object {
+        "x": "bbbb",
+      },
+    },
+  },
+  "array": Array [
+    100,
+    Object {
+      "foo": "baz",
+    },
+    1,
+    3,
+    Object {
+      "foo": "bar",
+    },
+    1,
+  ],
+}
+`
+
+exports[`test/basic.js TAP conflicted > prefer theirs 1`] = `
 Object {
   "a": Object {
     "b": Object {
@@ -78,5 +54,38 @@ Object {
     },
     1,
   ],
+}
+`
+
+exports[`test/basic.js TAP error states > BOM is no problem 1`] = `
+Object {
+  "a": Object {
+    "b": Object {
+      "c": Object {
+        "x": "bbbb",
+      },
+    },
+  },
+  "array": Array [
+    100,
+    Object {
+      "foo": "baz",
+    },
+    1,
+    3,
+    Object {
+      "foo": "bar",
+    },
+    1,
+  ],
+}
+`
+
+exports[`test/basic.js TAP global object attributes > filters out global object attributes 1`] = `
+Object {
+  "__proto__": "__proto__",
+  "constructor": "constructor",
+  "toString": "toString",
+  "x": Object {},
 }
 `
