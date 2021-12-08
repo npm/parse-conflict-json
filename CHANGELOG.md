@@ -1,3 +1,9 @@
+## v2.0.1
+
+### Bug Fixes
+
+Move @npmcli/template-oss to a dev dependency
+
 ## v2.0.0
 
 ### BREAKING CHANGES
