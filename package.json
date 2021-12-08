@@ -2,7 +2,7 @@
   "name": "parse-conflict-json",
   "version": "1.1.0",
   "description": "Parse a JSON string that has git merge conflicts, resolving if possible",
-  "author": "Isaac Z. Schlueter <i@izs.me> (https://izs.me)",
+  "author": "GitHub Inc.",
   "license": "ISC",
   "main": "lib",
   "scripts": {
@@ -10,7 +10,12 @@
     "snap": "tap",
     "preversion": "npm test",
     "postversion": "npm publish",
-    "postpublish": "git push origin --follow-tags"
+    "postpublish": "git push origin --follow-tags",
+    "lint": "eslint '**/*.js'",
+    "postlint": "npm-template-check",
+    "lintfix": "npm run lint -- --fix",
+    "prepublishOnly": "git push origin --follow-tags",
+    "posttest": "npm run lint"
   },
   "tap": {
     "check-coverage": true
@@ -19,6 +24,7 @@
     "tap": "^15.1.5"
   },
   "dependencies": {
+    "@npmcli/template-oss": "^2.3.1",
     "json-parse-even-better-errors": "^2.3.1",
     "just-diff": "^5.0.1",
     "just-diff-apply": "^4.0.1"
@@ -28,6 +34,11 @@
     "url": "git+https://github.com/npm/parse-conflict-json.git"
   },
   "files": [
-    "index.js"
-  ]
+    "bin",
+    "lib"
+  ],
+  "templateVersion": "2.3.1",
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  }
 }
