@@ -15,13 +15,14 @@
     "postlint": "npm-template-check",
     "lintfix": "npm run lint -- --fix",
     "prepublishOnly": "git push origin --follow-tags",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "template-copy": "npm-template-copy --force"
   },
   "tap": {
     "check-coverage": true
   },
   "devDependencies": {
-    "@npmcli/template-oss": "^2.3.1",
+    "@npmcli/template-oss": "^2.9.2",
     "tap": "^15.1.5"
   },
   "dependencies": {
@@ -37,8 +38,10 @@
     "bin",
     "lib"
   ],
-  "templateVersion": "2.3.1",
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.9.2"
   }
 }
