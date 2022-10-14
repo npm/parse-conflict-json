@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.0.0](https://github.com/npm/parse-conflict-json/compare/v2.0.2...v3.0.0) (2022-10-12)
+
+### ⚠️ BREAKING CHANGES
+
+* `parse-conflict-json` is now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
+
+### Features
+
+* [`97eebf8`](https://github.com/npm/parse-conflict-json/commit/97eebf80dadec116682975047ace974c7989a4ed) [#27](https://github.com/npm/parse-conflict-json/pull/27) postinstall for dependabot template-oss PR (@lukekarrys)
+
+### Dependencies
+
+* [`11ac781`](https://github.com/npm/parse-conflict-json/commit/11ac781a568ad814de8ce021f201d1c03f5ca38f) [#33](https://github.com/npm/parse-conflict-json/pull/33) bump json-parse-even-better-errors from 2.3.1 to 3.0.0
+
 ### [2.0.2](https://github.com/npm/parse-conflict-json/compare/v2.0.1...v2.0.2) (2022-03-28)
 
 
