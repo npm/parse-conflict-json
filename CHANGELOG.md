@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.1](https://github.com/npm/parse-conflict-json/compare/v3.0.0...v3.0.1) (2023-03-16)
+
+### Dependencies
+
+* [`13f103a`](https://github.com/npm/parse-conflict-json/commit/13f103aba82f7ae65bea45c8075395bb1627d3f5) [#42](https://github.com/npm/parse-conflict-json/pull/42) bump just-diff from 5.2.0 to 6.0.0 (#42)
+
 ## [3.0.0](https://github.com/npm/parse-conflict-json/compare/v2.0.2...v3.0.0) (2022-10-12)
 
 ### ⚠️ BREAKING CHANGES
