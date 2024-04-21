@@ -1,6 +1,6 @@
 {
   "name": "parse-conflict-json",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Parse a JSON string that has git merge conflicts, resolving if possible",
   "author": "GitHub Inc.",
   "license": "ISC",

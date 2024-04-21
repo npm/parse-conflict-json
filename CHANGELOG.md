@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/npm/parse-conflict-json/compare/v3.0.1...v3.0.2) (2024-04-21)
+
+### Chores
+
+* [`3df55ed`](https://github.com/npm/parse-conflict-json/commit/3df55eda6203c82ef7111500e15d3a3df479b521) [#78](https://github.com/npm/parse-conflict-json/pull/78) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`7f611b4`](https://github.com/npm/parse-conflict-json/commit/7f611b413a5f4d258544b84fbf482ea80744c747) [#78](https://github.com/npm/parse-conflict-json/pull/78) bump @npmcli/template-oss from 4.21.3 to 4.21.4 (@dependabot[bot])
+
 ## [3.0.1](https://github.com/npm/parse-conflict-json/compare/v3.0.0...v3.0.1) (2023-03-16)
 
 ### Dependencies
