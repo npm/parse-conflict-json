@@ -5,6 +5,7 @@
   "author": "GitHub Inc.",
   "license": "ISC",
   "main": "lib",
+  "bin": "lib/cli-run.js",
   "scripts": {
     "test": "tap",
     "snap": "tap",
@@ -14,17 +15,10 @@
     "posttest": "npm run lint",
     "template-oss-apply": "template-oss-apply --force"
   },
-  "tap": {
-    "check-coverage": true,
-    "nyc-arg": [
-      "--exclude",
-      "tap-snapshots/**"
-    ]
-  },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/template-oss": "4.21.4",
-    "tap": "^16.0.1"
+    "tap": "^18.7.2"
   },
   "dependencies": {
     "json-parse-even-better-errors": "^3.0.0",

@@ -5,13 +5,15 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/basic.js TAP basic usage > parse unconflicted 1`] = `
+exports[`test/basic.js > TAP > basic usage > parse unconflicted 1`] = `
 Object {
   "a": "apple",
+  [Symbol.for(indent)]: "",
+  [Symbol.for(newline)]: "",
 }
 `
 
-exports[`test/basic.js TAP conflicted > parse conflicted, preferring theirs 1`] = `
+exports[`test/basic.js > TAP > conflicted > parse conflicted, preferring theirs 1`] = `
 Object {
   "a": Object {
     "b": Object {
@@ -32,10 +34,12 @@ Object {
     },
     1,
   ],
+  [Symbol.for(indent)]: "",
+  [Symbol.for(newline)]: "",
 }
 `
 
-exports[`test/basic.js TAP conflicted > prefer theirs 1`] = `
+exports[`test/basic.js > TAP > conflicted > prefer theirs 1`] = `
 Object {
   "a": Object {
     "b": Object {
@@ -54,10 +58,12 @@ Object {
     },
     1,
   ],
+  [Symbol.for(indent)]: "",
+  [Symbol.for(newline)]: "",
 }
 `
 
-exports[`test/basic.js TAP error states > BOM is no problem 1`] = `
+exports[`test/basic.js > TAP > error states > BOM is no problem 1`] = `
 Object {
   "a": Object {
     "b": Object {
@@ -78,13 +84,17 @@ Object {
     },
     1,
   ],
+  [Symbol.for(indent)]: "",
+  [Symbol.for(newline)]: "",
 }
 `
 
-exports[`test/basic.js TAP global object attributes > filters out global object attributes 1`] = `
+exports[`test/basic.js > TAP > global object attributes > filters out global object attributes 1`] = `
 Object {
   "__proto__": "__proto__",
   "constructor": "constructor",
+  [Symbol.for(indent)]: "",
+  [Symbol.for(newline)]: "",
   "toString": "toString",
   "x": Object {},
 }
