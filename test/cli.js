@@ -29,7 +29,6 @@ for (const desc_arg of [
   ['conflicting file (theirs, arg last)', [conflictedPath, '--prefer=theirs']],
   ['conflicting file (theirs, arg separate)', [conflictedPath, '--prefer', 'theirs']],
   ['multiple files', [conflictedPath, conflictedPath]],
-  // ['in-place update']
 ]) {
   const [desc, argv] = desc_arg;
   t.test(desc, async t => {
@@ -38,3 +37,26 @@ for (const desc_arg of [
     t.matchSnapshot(t.errs().map(({args}) => args), 'stderr');
   })
 }
+
+t.test('in-place updates', async t => {
+
+  let files = {
+    'broken.json': readFileSync(brokenPath),
+    'conflicted.json': readFileSync(conflictedPath),
+    'proto.json': readFileSync(protoPath),
+  };
+  let filePaths = Object.keys(files).map(f => path.join(t.testdirName, f));
+  t.testdir(files);
+
+  t.matchSnapshot(cli.main(['--in-place', ...filePaths]), 'exit code');
+  t.matchSnapshot(t.outs().map(({args}) => args), 'stdout');
+  t.matchSnapshot(t.errs().map(({args}) => args), 'stderr');
+
+  for (let f of filePaths) {
+    let newContent = readFileSync(f).toString()
+    let oldContent = files[path.basename(f)];
+    t.notSame(newContent, oldContent);
+    t.matchSnapshot(newContent, `file ${path.basename(f)}`);
+  }
+
+});

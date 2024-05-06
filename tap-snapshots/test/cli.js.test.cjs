@@ -229,6 +229,119 @@ Array [
 ]
 `
 
+exports[`test/cli.js > TAP > in-place updates > exit code 1`] = `
+1
+`
+
+exports[`test/cli.js > TAP > in-place updates > file broken.json 1`] = `
+{
+  "array": [
+<<<<<<< HEAD
+    100,
+    {
+      "foo": "baz",
+    },
+||||||| merged common ancestors
+    1,
+=======
+    111,
+    1,
+    2,
+    3,
+    {
+      "foo": "bar"
+    },
+>>>>>>> a
+    1
+  ],
+  "a": {
+    "b": {
+<<<<<<< HEAD
+      "c": {
+        "x": "bbbb"
+      }
+||||||| merged common ancestors
+      "c": {
+        "x": "aaaa"
+      }
+=======
+      "c": "xxxx"
+>>>>>>> a
+    }
+  }
+}
+
+`
+
+exports[`test/cli.js > TAP > in-place updates > file conflicted.json 1`] = `
+{
+  "array": [
+<<<<<<< HEAD
+    100,
+    {
+      "foo": "baz"
+    },
+||||||| merged common ancestors
+    1,
+=======
+    111,
+    1,
+    2,
+    3,
+    {
+      "foo": "bar"
+    },
+>>>>>>> a
+    1
+  ],
+  "a": {
+    "b": {
+<<<<<<< HEAD
+      "c": {
+        "x": "bbbb"
+      }
+||||||| merged common ancestors
+      "c": {
+        "x": "aaaa"
+      }
+=======
+      "c": "xxxx"
+>>>>>>> a
+    }
+  }
+}
+
+`
+
+exports[`test/cli.js > TAP > in-place updates > file proto.json 1`] = `
+{
+  "constructor": "constructor",
+  "toString": "toString",
+  "__proto__": "__proto__",
+  "x": {
+<<<<<<<
+    "__proto__": {
+      "foo": "__proto__.foo"
+    }
+=======
+>>>>>>>
+  }
+}
+
+`
+
+exports[`test/cli.js > TAP > in-place updates > stderr 1`] = `
+Array [
+  Array [
+    "Error: unrecognized option --in-place",
+  ],
+]
+`
+
+exports[`test/cli.js > TAP > in-place updates > stdout 1`] = `
+Array []
+`
+
 exports[`test/cli.js > TAP > multiple files > exit code 1`] = `
 0
 `
