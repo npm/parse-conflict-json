@@ -25,7 +25,7 @@ Array [
        -h, --help       print this help and exit
        -v, --version    print version number and exit
        -i, --in-place   write resolved conflicts back to FILE (default to stdout)
-       -p/--prefer {ours|theirs}
+       -p, --prefer {ours|theirs}
                         prefer *our* or *their* version of the file, respectively
                         (default: 'ours')
       
@@ -55,7 +55,7 @@ Array [
        -h, --help       print this help and exit
        -v, --version    print version number and exit
        -i, --in-place   write resolved conflicts back to FILE (default to stdout)
-       -p/--prefer {ours|theirs}
+       -p, --prefer {ours|theirs}
                         prefer *our* or *their* version of the file, respectively
                         (default: 'ours')
       
@@ -101,7 +101,7 @@ Array [
        -h, --help       print this help and exit
        -v, --version    print version number and exit
        -i, --in-place   write resolved conflicts back to FILE (default to stdout)
-       -p/--prefer {ours|theirs}
+       -p, --prefer {ours|theirs}
                         prefer *our* or *their* version of the file, respectively
                         (default: 'ours')
       
@@ -192,35 +192,104 @@ Array []
 `
 
 exports[`test/cli.js > TAP > conflicting file > exit code 1`] = `
-1
+0
 `
 
 exports[`test/cli.js > TAP > conflicting file > stderr 1`] = `
-Array [
-  Array [
-    "TypeError [ERR_INVALID_ARG_TYPE]: The \\"path\\" argument must be of type string or an instance of Buffer or URL. Received undefined",
-  ],
-]
+Array []
 `
 
 exports[`test/cli.js > TAP > conflicting file > stdout 1`] = `
-Array []
-`
-
-exports[`test/cli.js > TAP > multiple files > exit code 1`] = `
-1
-`
-
-exports[`test/cli.js > TAP > multiple files > stderr 1`] = `
 Array [
   Array [
-    "TypeError [ERR_INVALID_ARG_TYPE]: The \\"path\\" argument must be of type string or an instance of Buffer or URL. Received undefined",
+    Object {
+      "a": Object {
+        "b": Object {
+          "c": Object {
+            "x": "bbbb",
+          },
+        },
+      },
+      "array": Array [
+        100,
+        Object {
+          "foo": "baz",
+        },
+        1,
+        3,
+        Object {
+          "foo": "bar",
+        },
+        1,
+      ],
+      [Symbol.for(indent)]: "",
+      [Symbol.for(newline)]: "",
+    },
   ],
 ]
 `
 
-exports[`test/cli.js > TAP > multiple files > stdout 1`] = `
+exports[`test/cli.js > TAP > multiple files > exit code 1`] = `
+0
+`
+
+exports[`test/cli.js > TAP > multiple files > stderr 1`] = `
 Array []
+`
+
+exports[`test/cli.js > TAP > multiple files > stdout 1`] = `
+Array [
+  Array [
+    Object {
+      "a": Object {
+        "b": Object {
+          "c": Object {
+            "x": "bbbb",
+          },
+        },
+      },
+      "array": Array [
+        100,
+        Object {
+          "foo": "baz",
+        },
+        1,
+        3,
+        Object {
+          "foo": "bar",
+        },
+        1,
+      ],
+      [Symbol.for(indent)]: "",
+      [Symbol.for(newline)]: "",
+    },
+  ],
+  Array [
+    Object {
+      "a": Object {
+        "b": Object {
+          "c": Object {
+            "x": "bbbb",
+          },
+        },
+      },
+      "array": Array [
+        100,
+        Object {
+          "foo": "baz",
+        },
+        1,
+        3,
+        Object {
+          "foo": "bar",
+        },
+        1,
+      ],
+      [Symbol.for(indent)]: "",
+      [Symbol.for(newline)]: "",
+    },
+  ],
+]
 `
 
 exports[`test/cli.js > TAP > no args > exit code 1`] = `
@@ -246,7 +315,7 @@ exports[`test/cli.js > TAP > nonexistent file > exit code 1`] = `
 exports[`test/cli.js > TAP > nonexistent file > stderr 1`] = `
 Array [
   Array [
-    "TypeError [ERR_INVALID_ARG_TYPE]: The \\"path\\" argument must be of type string or an instance of Buffer or URL. Received undefined",
+    "Error: ENOENT: no such file or directory, open 'nonexistent_file.json'",
   ],
 ]
 `
