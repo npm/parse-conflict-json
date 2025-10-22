@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.0.0](https://github.com/npm/parse-conflict-json/compare/v4.0.0...v5.0.0) (2025-10-22)
+### ⚠️ BREAKING CHANGES
+* `parse-conflict-json` now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`4ed3e82`](https://github.com/npm/parse-conflict-json/commit/4ed3e828b26ce68e630fa8b96550cf2e3e3dc87d) [#108](https://github.com/npm/parse-conflict-json/pull/108) align to npm 11 node engine range (@owlstronaut)
+### Chores
+* [`f8d6bc1`](https://github.com/npm/parse-conflict-json/commit/f8d6bc15809c804509bb91f24d4ff035abe2c5a0) [#108](https://github.com/npm/parse-conflict-json/pull/108) template-oss-apply (@owlstronaut)
+* [`1584356`](https://github.com/npm/parse-conflict-json/commit/1584356e9d083bc2a58b5d0fd113c0b9097b106f) [#101](https://github.com/npm/parse-conflict-json/pull/101) postinstall workflow updates (#101) (@owlstronaut)
+* [`b261dd4`](https://github.com/npm/parse-conflict-json/commit/b261dd4d9fd059266ce7c9481c0557e22636287a) [#107](https://github.com/npm/parse-conflict-json/pull/107) bump @npmcli/template-oss from 4.26.0 to 4.27.1 (#107) (@dependabot[bot], @npm-cli-bot)
+
 ## [4.0.0](https://github.com/npm/parse-conflict-json/compare/v3.0.1...v4.0.0) (2024-09-24)
 ### ⚠️ BREAKING CHANGES
 * `parse-conflict-json` now supports node `^18.17.0 || >=20.5.0`
