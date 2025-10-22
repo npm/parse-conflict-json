@@ -28,7 +28,7 @@
     "tap": "^16.0.1"
   },
   "dependencies": {
-    "json-parse-even-better-errors": "^4.0.0",
+    "json-parse-even-better-errors": "^5.0.0",
     "just-diff": "^6.0.0",
     "just-diff-apply": "^5.2.0"
   },
