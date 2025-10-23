@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.0.1](https://github.com/npm/parse-conflict-json/compare/v5.0.0...v5.0.1) (2025-10-23)
+### Dependencies
+* [`cee4e06`](https://github.com/npm/parse-conflict-json/commit/cee4e066c74cb0017e112c07696ec5310c674285) [#109](https://github.com/npm/parse-conflict-json/pull/109) bump json-parse-even-better-errors from 4.0.0 to 5.0.0 (#109) (@dependabot[bot])
+
 ## [5.0.0](https://github.com/npm/parse-conflict-json/compare/v4.0.0...v5.0.0) (2025-10-22)
 ### ⚠️ BREAKING CHANGES
 * `parse-conflict-json` now supports node `^20.17.0 || >=22.9.0`
