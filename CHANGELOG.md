@@ -1,5 +1,20 @@
 # Changelog
 
+## [6.0.0](https://github.com/npm/parse-conflict-json/compare/v5.0.1...v6.0.0) (2026-05-15)
+### ⚠️ BREAKING CHANGES
+* `parse-conflict-json` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* template-oss-apply
+### Features
+* [`ee52de6`](https://github.com/npm/parse-conflict-json/commit/ee52de6099daf2a9738a9f5725600fb476095d20) [#122](https://github.com/npm/parse-conflict-json/pull/122) bump to new node engine range (@owlstronaut)
+* [`79be2cc`](https://github.com/npm/parse-conflict-json/commit/79be2cc33dc871a00018d2d2cd3e481692e5e5e3) [#122](https://github.com/npm/parse-conflict-json/pull/122) template-oss-apply (@owlstronaut)
+### Dependencies
+* [`4f97b32`](https://github.com/npm/parse-conflict-json/commit/4f97b3228d5a301b6b231df282f44c86f7175c2b) [#122](https://github.com/npm/parse-conflict-json/pull/122) `json-parse-even-better-errors@6.0.0`
+### Chores
+* [`74264ce`](https://github.com/npm/parse-conflict-json/commit/74264ce5cb8d637721b5602b3b5dbe4d234d633c) [#122](https://github.com/npm/parse-conflict-json/pull/122) template-oss-apply (@owlstronaut)
+* [`980c900`](https://github.com/npm/parse-conflict-json/commit/980c900e05d505d26ec82a3e80fcc53fe696beca) [#122](https://github.com/npm/parse-conflict-json/pull/122) bumping @npmcli/template-oss from 4.30.0 to 5.1.0 (@owlstronaut)
+* [`5c94033`](https://github.com/npm/parse-conflict-json/commit/5c940333550fb14a65b451f83e21e9d555da2f8a) bump @npmcli/eslint-config from 5.1.0 to 6.0.0 (#112) (@dependabot[bot])
+* [`6e486f4`](https://github.com/npm/parse-conflict-json/commit/6e486f473675f6d7e6e90b633da90c1033f00c90) [#118](https://github.com/npm/parse-conflict-json/pull/118) bump @npmcli/template-oss from 4.29.0 to 4.30.0 (#118) (@dependabot[bot], @npm-cli-bot)
+
 ## [5.0.1](https://github.com/npm/parse-conflict-json/compare/v5.0.0...v5.0.1) (2025-10-23)
 ### Dependencies
 * [`cee4e06`](https://github.com/npm/parse-conflict-json/commit/cee4e066c74cb0017e112c07696ec5310c674285) [#109](https://github.com/npm/parse-conflict-json/pull/109) bump json-parse-even-better-errors from 4.0.0 to 5.0.0 (#109) (@dependabot[bot])
