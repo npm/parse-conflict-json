@@ -15,6 +15,28 @@ t.test('conflicted', async t => {
   t.matchSnapshot(parseJSON(conflicted, null, 'theirs'), 'prefer theirs')
 })
 
+t.test('conflict on final object property', async t => {
+  const finalPropertyConflict = [
+    '{',
+    '  "foo": "foo",',
+    '<'.repeat(7) + ' HEAD',
+    '  "bar": "bar1"',
+    '='.repeat(7),
+    '  "bar": "bar2"',
+    '>'.repeat(7) + ' git-conflict-2',
+    '}',
+  ].join('\n')
+
+  t.strictSame(parseJSON(finalPropertyConflict), {
+    foo: 'foo',
+    bar: 'bar1',
+  })
+  t.strictSame(parseJSON(finalPropertyConflict, null, 'theirs'), {
+    foo: 'foo',
+    bar: 'bar2',
+  })
+})
+
 t.test('isDiff', async t => {
   t.notOk(parseJSON.isDiff(JSON.stringify({})), '{} is not a diff conflict')
   t.notOk(parseJSON.isDiff(JSON.stringify({ a: 1 })), '{a:1} is not a diff conflict')
