@@ -4,6 +4,9 @@ Parse a JSON string that has git merge conflicts, resolving if possible.
 
 If the JSON is valid, it just does `JSON.parse` as normal.
 
+Conflict markers must start a physical line, optionally after spaces or tabs.
+Marker-like text inside a JSON string is treated as data.
+
 If either side of the conflict is invalid JSON, then an error is thrown for
 that.
 
